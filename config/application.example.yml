@@ -1,0 +1,3 @@
+ Add configuration values here, as shown below.
+SENDGRID_PASSWORD: enterPasswordHere
+SENDGRID_USERNAME: enterUserNameHere
