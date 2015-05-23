@@ -5,7 +5,9 @@
          <%= image_tag @user.avatar.url, class: 'pull-left' %>
        <% end %>
         <div class="media-body">
-         <h2 class="media-heading"><%= @user.name %></h2>
+         <h2 class="media-heading">User name is: <%= @user.name.titlecase %></h2>
+         <p> You were last signed in: <%= time_ago_in_words( @user.last_sign_in_at) %> ago.</p>
+         <p> With the email: <%= @user.email %>
        </div>
      </div>
    </div>
