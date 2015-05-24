@@ -12,3 +12,18 @@
      </div>
    </div>
  </div>
+<hr>
+<h3>Items:</h3>
+<div class='js-items'>
+
+<%= render partial: '/items/item', collection: @items %>
+
+</div>
+
+<div class='new-comment'>
+<% if current_user.present? %>  
+
+ <%= render partial: '/items/form', locals: { item: @item } %>
+ 
+</div>
+<% end %>
