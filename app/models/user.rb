@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   mount_uploader :avatar, AvatarUploader
-  has_many :items
+    has_many :items, dependent: :destroy
 end

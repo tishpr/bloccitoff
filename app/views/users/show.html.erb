@@ -14,16 +14,18 @@
  </div>
 <hr>
 <h3>Items:</h3>
-<div class='js-items'>
+<div class="col-md-4">To Do Item Created</div>
+<div class="col-md-6">Item Name</div>
+<div class="col-md-2">Check Completed</div><hr>
 
-<%= render partial: '/items/item', collection: @items %>
+  <div class='js-items'>
+   <%= render partial: '/items/item', collection: @items %>
+  </div>
 
-</div>
-
-<div class='new-comment'>
-<% if current_user.present? %>  
-
- <%= render partial: '/items/form', locals: { item: @item } %>
- 
+  <div class='new-item'> <!-- the addition of these two classes fixed my js problem -->
+    <div class="col-md-8">
+   <% if current_user.present? %>  
+    <%= render partial: '/items/form', locals: { item: @item } %>
+ </div>
 </div>
 <% end %>

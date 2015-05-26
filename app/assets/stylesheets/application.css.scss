@@ -1,8 +1,5 @@
-@import "bootstrap";
-
-
-
 /*
+* I didn't realize the @import bootstrap had to be below these comments!!!!!!
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -17,3 +14,5 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
