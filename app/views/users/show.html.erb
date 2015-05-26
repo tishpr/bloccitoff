@@ -2,7 +2,7 @@
    <div class="col-md-8">
      <div class="media">
        <% if @user.avatar? %>
-         <%= image_tag @user.avatar.url, class: 'pull-left' %>
+         <%= image_tag @user.avatar.profile.url, class: 'pull-left' %>
        <% end %>
         <div class="media-body">
          <h2 class="media-heading">User name is: <%= @user.name.titlecase %></h2>

@@ -1,12 +1,13 @@
 <%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
-<div class= "media-body">
-  <div class="row">
-<div class="col-md-4"><%= time_ago_in_words(item.created_at) %> ago</div>
-<div class="col-md-7"><%= item.name %></div>
-<div class="col-md-1"><%= link_to "", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></div>
 
-<hr>
-<% end %>
-</div>
+<div class= "media-body">
+ <div class="row">
+  <div class="col-md-4"><%= time_ago_in_words(item.created_at) %> ago (days remaining: <%= item.days_left %> )</div>
+   <div class="col-md-7"><%= item.name %></div>
+    <div class="col-md-1"><%= link_to "", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></div>
+
+      <hr>
+      <% end %>
+  </div>
 </div>
 
