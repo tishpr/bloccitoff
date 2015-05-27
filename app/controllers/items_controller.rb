@@ -2,26 +2,22 @@ class ItemsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @item = current_user.items.build( item_params )
-    #@item.user = @user
+    @item = current_user.items.build( item_params )    
     @new_item = Item.new
-
-    if @item.save
-     flash[:notice] = "Task was created."
-    else
-     flash[:error] = "There was an error saving the task. Please try again."
-    end
+     if @item.save
+       flash[:notice] = "Task was created."
+     else
+       flash[:error] = "There was an error saving the task. Please try again."
+     end
       respond_to do |format|
-      format.html
-      format.js   # calls the create.js.erb 
+      format.html 
+      format.js  
     end
   end
 
   def destroy
-
-    # authorize @item
     @user = User.find(params[:user_id])
-    @item = @user.items.find(params[:id])
+    @item = current_user.items.find(params[:id])
 
     if @item.destroy
      flash[:notice] = "Item was removed."
@@ -31,7 +27,7 @@ class ItemsController < ApplicationController
     
      respond_to do |format|
      format.html
-     format.js     # calls the create.js.erb 
+     format.js     
     end
   end 
   

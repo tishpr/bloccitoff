@@ -3,8 +3,8 @@ class Item < ActiveRecord::Base
     belongs_to :user
 
    def days_left
-    t = Time.now
-    t = t.gmtime
-      7 - (t.to_date - created_at.to_date).to_i    # this is not working correctly...
+    #binding.pry
+      7 - (DateTime.now.utc.to_date - created_at.to_date).to_i
+      
    end
 end
