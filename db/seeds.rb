@@ -5,7 +5,8 @@ require 'faker'
    user = User.new(
      name:     Faker::Name.name,
      email:    Faker::Internet.email,
-     password: Faker::Lorem.characters(10)
+     password: 'helloworld',
+     last_sign_in_at: rand(10.minutes .. 1.year).ago
 
    )
    user.skip_confirmation!
@@ -17,7 +18,8 @@ require 'faker'
      admin = User.new(
        name:     'Admin User',
        email:    'admin@example.com',
-       password: 'helloworld'
+       password: 'helloworld',
+       role:      'Project Manager'
      )
      admin.skip_confirmation!
      admin.save!

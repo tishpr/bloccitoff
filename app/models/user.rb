@@ -4,4 +4,9 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
     has_many :items, dependent: :destroy
+
+  def admin?
+   role == 'Project Manager'
+  end
+
 end

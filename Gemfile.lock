@@ -207,6 +207,8 @@ GEM
     pry-stack_explorer (0.4.9.2)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
+    pundit (0.3.0)
+      activesupport (>= 3.0.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.5.3)
@@ -297,6 +299,7 @@ DEPENDENCIES
   pry-byebug
   pry-remote
   pry-stack_explorer
+  pundit
   quiet_assets
   rails (= 4.1.7)
   rails_12factor

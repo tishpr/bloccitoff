@@ -7,20 +7,21 @@ class UsersController < ApplicationController
      flash[:notice] = "User information updated"  
    else
      flash[:error] = "Invalid user information" 
-   end
-   redirect_to edit_user_registration_path
+   end  
+    redirect_to edit_user_registration_path
  end
  
  def show
-   @user = User.find(params[:id])
+   @user  = User.find(params[:id])
    @items = Item.where(user_id: @user.id) 
-   @item = @items.new
+   @item  = @items.new
+   authorize @item
  end
    
 private
  
  def user_params
-   params.require(:user).permit(:name, :avatar, :email_favorites)
+   params.require(:user).permit(:name, :avatar)
  end
 
 end

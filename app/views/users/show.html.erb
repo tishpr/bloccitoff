@@ -7,17 +7,18 @@
         <div class="media-body">
          <h2 class="media-heading">User name is: <%= @user.name.titlecase %></h2>
          <p> You were last signed in: <%= time_ago_in_words( @user.last_sign_in_at) %> ago.</p>
-         <p> With the email: <%= @user.email %>
+         <p> With the email: <%= @user.email %></p>
        </div>
      </div>
    </div>
  </div>
 <hr>
-<h3>Items:</h3>
-<div class="col-md-4">To Do Item Created</div>
-<div class="col-md-6">Item Name</div>
-<div class="col-md-2">Check Completed</div><hr>
-
+<h2>Items:</h2>
+<div class='row'>
+<h3 class="col-md-4">To Do Item Created</h3>
+<h3 class="col-md-6">Item Name</h3>
+<h3 class="col-md-2">Check Completed</h3><hr>
+</div>
   <div class='js-items'>
    <%= render partial: '/items/item', collection: @items %>
   </div>
@@ -26,6 +27,6 @@
     <div class="col-md-8">
    <% if current_user.present? %>  
     <%= render partial: '/items/form', locals: { item: @item } %>
+ <% end %>
  </div>
 </div>
-<% end %>
